@@ -3,30 +3,22 @@ import * as S from "./style";
 import { imageList } from "../../../lib/export/data";
 
 const Introduce = () => {
-  const [position, setPosition] = useState<"relative" | "fixed">("relative");
   const [posY, setPosY] = useState(-480);
-  const [top, setTop] = useState<number>(0);
 
   window.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop;
-    if (scroll >= 5780) {
-      // 섹션 최대 길이
-      setPosition("relative");
-      setTop(1833);
-    } else if (scroll >= 3926) {
-      // 섹션 시작
-      setPosition("fixed");
+    // 섹션 시작
+    if (scroll >= 5780 + 1000) {
+      setPosY(417);
+    } else if (scroll >= 3526 - 500) {
       setPosY(parseInt(String((scroll - 3926) / 2.06)) - 480);
       // 섹션 최대 길이 - 섹션 시작 / 900(카드 콘테이너 길이) = 2.06
-      setTop(0);
-    } else {
-      setPosition("relative");
     }
   });
 
   return (
     <S.ScrollDiv>
-      <S.MainDIv pos={position} top={top}>
+      <S.MainDIv>
         <S.Title>
           <div>
             INTRODUCE<span>__</span>
