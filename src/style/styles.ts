@@ -16,6 +16,7 @@ const GlobalStyle: any = createGlobalStyle`
     * {
       outline: none;
       text-decoration: none;
+      box-sizing: border-box;
     }
 
     :root {
