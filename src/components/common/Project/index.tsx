@@ -32,7 +32,7 @@ const Project = () => {
         {/* 가이드 선  */}
         <S.Drag guideLine={guide}>
           <div>
-            <img src={pointImg} alt="" />
+            <img src={pointImg} alt="마우스 포인터 이미지" />
             <a>- - - - - - - -</a>
             <div />
           </div>
@@ -68,7 +68,7 @@ const Project = () => {
                 )}
                 {t.imageList.map((t1) => (
                   <div>
-                    <img src={t1} alt="" draggable="false" />
+                    <img src={t1} alt="프로젝트 이미지" draggable="false" />
                   </div>
                 ))}
                 {i + rotate === 0 && t.imageList.length > 1 ? (
@@ -115,7 +115,7 @@ const Project = () => {
                 {t.imageList.map((t1) => (
                   <>
                     <div>
-                      <img src={t1} alt="" />
+                      <img src={t1} alt="프로젝트 이미지" />
                       <div />
                     </div>
                   </>
