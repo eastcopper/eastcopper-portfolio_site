@@ -6,6 +6,7 @@ import GlobalStyle from "./style/styles";
 import Works from "./components/common/Works";
 import Introduce from "./components/common/Introduce";
 import Project from "./components/common/Project";
+import Tech from "./components/common/Tech";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Works />
       <Introduce />
       <Project />
+      <Tech />
     </>
   );
 }
