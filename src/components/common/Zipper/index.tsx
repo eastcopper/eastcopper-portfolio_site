@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { zipperScroll } from "../../../lib/func/zipperAnimation";
 import * as S from "./style";
 
@@ -29,23 +29,18 @@ export default function Zipper(): JSX.Element {
       setDivTransfrom(`scale(1.5, ${zipperScroll(scroll)})`); // 스크롤 시 div 세로 크기 조정
     });
   });
-
-  useEffect(() => {
-    setTimeout(() => {
-      setColor("#f0f0f0");
-    }, 500);
-  }, []);
+  
 
   return (
     <S.MainDiv position={position} backColor={color}>
       <S.Title
-        backColor="#121212"
+        color="#121212"
         zindex={2}
         size={160}
         position={position}
         top={"50%"}
       >
-        <span>PORTFOLIO</span>
+        PORTFOLIO
       </S.Title>
       {divs.map((item: number) => (
         <span
@@ -60,14 +55,12 @@ export default function Zipper(): JSX.Element {
         /> // height를 동적으로 변화시켜 애니메이션 만들기
       ))}
       <S.Title
-        backColor={color}
+        color="#f0f0f0"
         zindex={1}
         size={200}
         position={position}
         top={top === 0 ? "50%" : "2477px"}
-      >
-        <span>{`Lee\ndong hyeon`}</span>
-      </S.Title>
+      >{`Lee\ndong hyeon`}</S.Title>
     </S.MainDiv>
   );
 }

@@ -10,14 +10,14 @@ export const MainDiv = styled.div<{
   top: ${(props) => props.top || 0};
   width: 100%;
   height: 100%;
-  background-color: ${(props) => props.backColor};
+  background-color: var(--white);
   display: flex;
 `;
 
 export const Title = styled.p<{
   position?: string;
   top?: string;
-  backColor: string;
+  color: string;
   zindex: number;
   size: number;
 }>`
@@ -31,6 +31,6 @@ export const Title = styled.p<{
   line-height: 1.3;
   margin: 0;
   font-family: "Bebas Neue", cursive;
-  color: ${(props) => props.backColor};
+  color: ${(props) => props.color};
   white-space: pre-wrap;
 `;

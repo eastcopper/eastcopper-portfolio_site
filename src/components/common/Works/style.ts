@@ -30,6 +30,7 @@ export const MainDiv = styled.div`
       left: -440px;
       font-size: 70px;
       font-family: "Black Han Sans", sans-serif;
+      font-weight: 400;
       white-space: pre-wrap;
     }
   }
