@@ -15,7 +15,7 @@ const Project = () => {
     if (scroll <= 6695 - 300) {
       setRotate(2);
       setGuide("hidden");
-    } else if (6695 - 300 < scroll) {
+    } else if (Math.abs(6695 - 300 - scroll) > 50) {
       setRotate(0);
       setGuide("show");
     }
@@ -33,7 +33,7 @@ const Project = () => {
             <a>- - - - - - - -</a>
             <div />
           </div>
-          <span>드래그하여 프로젝트 전환</span>
+          <span>프로젝트 사진을 드래그해보세요!</span>
         </S.Drag>
         <div>
           {/* perspective와 rotate로 3D 구현 */}
@@ -100,7 +100,6 @@ const Project = () => {
                     } else {
                       setRotate(rotate + 1 > 0 ? rotate : rotate + 1);
                     }
-                    if (rotate - 1 === -2) setGuide("hidden");
                   }}
                 />
               </S.Card>

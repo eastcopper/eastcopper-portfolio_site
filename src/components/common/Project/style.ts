@@ -46,7 +46,7 @@ const FadeIn = keyframes`
     opacity: 0;
   }
   100% {
-    opacity: .7;
+    opacity: 0.8;
   }
 `;
 
@@ -65,11 +65,13 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
     position: absolute;
     top: 65px;
     color: var(--white);
-    right: 45px;
-    font-size: 16px;
+    left: 20%;
+    width: 100%;
+    font-size: 24px;
     font-family: "Do Hyeon", sans-serif;
-    opacity: 0.7;
-    animation: ${FadeIn} 1.5s ease-in-out alternate-reverse infinite;
+    opacity: 0.8;
+    animation: ${FadeIn} 1s ease-in-out alternate-reverse infinite;
+    animation-delay: 0.3s;
   }
 
   > div {
