@@ -5,7 +5,7 @@ export const ScrollDiv = styled.div`
   height: calc(300vh - 20px);
 `;
 
-export const MainDIv = styled.div<{ pos: string; top: number }>`
+export const MainDIv = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: var(--black);
@@ -15,9 +15,8 @@ export const MainDIv = styled.div<{ pos: string; top: number }>`
   justify-content: space-between;
   color: var(--white);
   overflow: hidden;
-  position: ${(props) => props.pos};
+  position: sticky;
   top: 0;
-  margin-top: ${(props) => props.top}px;
 `;
 
 export const CardContainer = styled.div<{ posY: number }>`
