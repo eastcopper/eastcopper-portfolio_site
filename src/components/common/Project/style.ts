@@ -41,6 +41,15 @@ const BrokenLine = keyframes`
   } 
 `;
 
+const FadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .7;
+  }
+`;
+
 export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
   opacity: ${(props) => (props.guideLine === "show" ? 1 : 0)};
   transition: 1s;
@@ -51,6 +60,17 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
   font-size: 50px;
   width: 335px;
   font-family: "Quicksand", sans-serif;
+
+  > span {
+    position: absolute;
+    top: 65px;
+    color: var(--white);
+    right: 45px;
+    font-size: 16px;
+    font-family: "Do Hyeon", sans-serif;
+    opacity: 0.7;
+    animation: ${FadeIn} 1.5s ease-in-out alternate-reverse infinite;
+  }
 
   > div {
     width: 335px;
