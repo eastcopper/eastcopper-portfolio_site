@@ -1,19 +1,23 @@
 import styled from "styled-components";
 
-export const MainDiv = styled.div<{ position?: string; top?: number }>`
+export const MainDiv = styled.div<{
+  position?: string;
+  top?: number;
+  backColor: string;
+}>`
   position: ${(props) => props.position || "fixed"};
   z-index: 2;
   top: ${(props) => props.top || 0};
   width: 100%;
   height: 100%;
-  background-color: var(--white);
+  background-color: ${(props) => props.backColor};
   display: flex;
 `;
 
 export const Title = styled.p<{
   position?: string;
   top?: string;
-  color: string;
+  backColor: string;
   zindex: number;
   size: number;
 }>`
@@ -27,6 +31,6 @@ export const Title = styled.p<{
   line-height: 1.3;
   margin: 0;
   font-family: "Bebas Neue", cursive;
-  color: ${(props) => props.color};
+  color: ${(props) => props.backColor};
   white-space: pre-wrap;
 `;
