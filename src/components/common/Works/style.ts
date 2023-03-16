@@ -12,8 +12,8 @@ export const RotateDiv = styled.div`
 
 export const MainDiv = styled.div`
   width: 100vw;
-  height: 100vh;
-  margin-top: calc(2520px + 50vh);
+  height: 105vh;
+  margin-top: calc(2020px + 50vh);
   box-sizing: border-box;
   padding-top: 235px;
   color: var(--white);

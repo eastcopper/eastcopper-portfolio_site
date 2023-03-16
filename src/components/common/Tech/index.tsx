@@ -13,7 +13,7 @@ const Tech = () => {
     if (scroll >= 9528) {
       setPos(4248);
     } else if (scroll >= 7654) {
-      setPos(parseInt(String((scroll - 7654) / 0.4406779661016949)));
+      setPos((scroll - 7654) / 0.4406779661016949);
     } else {
       setPos(0);
     }
