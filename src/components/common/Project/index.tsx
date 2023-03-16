@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as S from "./style";
-import { projects } from "../../../lib/export/data";
+import { imageList, projects } from "../../../lib/export/data";
 import pointImg from "../../../asset/img/hand-pointer.png";
 
 const Project = () => {
@@ -11,11 +11,11 @@ const Project = () => {
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop;
 
-    // 섹션 시작 = 6695
-    if (scroll <= 6695 - 300) {
+    // 섹션 시작 = 6195
+    if (scroll <= 6195 - 300) {
       setRotate(2);
       setGuide("hidden");
-    } else if (Math.abs(6695 - 300 - scroll) > 50) {
+    } else if (scroll <= 6195) {
       setRotate(0);
       setGuide("show");
     }
@@ -33,7 +33,7 @@ const Project = () => {
             <a>- - - - - - - -</a>
             <div />
           </div>
-          <span>프로젝트 사진을 드래그해보세요!</span>
+          <span>프로젝트 "사진"을 드래그해보세요!</span>
         </S.Drag>
         <div>
           {/* perspective와 rotate로 3D 구현 */}
@@ -121,6 +121,23 @@ const Project = () => {
             </S.CardContainer>
           ))}
         </div>
+        <S.Select>
+          {imageList.map((_, i, a) => (
+            <>
+              {i !== a.length - 1 ? (
+                <div
+                  onClick={() => {
+                    setRotate(-i);
+                  }}
+                >
+                  •
+                </div>
+              ) : (
+                <></>
+              )}
+            </>
+          ))}
+        </S.Select>
 
         {rotate !== 2 ? (
           <>

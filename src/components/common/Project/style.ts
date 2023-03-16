@@ -98,6 +98,26 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
   }
 `;
 
+export const Select = styled.div`
+  position: absolute;
+  bottom: 80px;
+  width: 800px;
+  z-index: 11;
+  display: inline-flex;
+  justify-content: space-around;
+  padding: 0px 100px;
+  font-size: 70px;
+  color: var(--white);
+  div {
+    opacity: 0.5;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  div:hover {
+    opacity: 1;
+  }
+`;
+
 export const MainDIv = styled.div`
   width: 100vw;
   height: 100vh;
@@ -108,7 +128,8 @@ export const MainDIv = styled.div`
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  > div {
+  > div:nth-child(1),
+  > div:nth-child(2) {
     width: 800px;
     height: 502px;
     display: flex;
@@ -243,6 +264,7 @@ export const Card = styled.div<{
     width: 950px;
     position: absolute;
     opacity: 0;
+    cursor: grab;
   }
 `;
 
