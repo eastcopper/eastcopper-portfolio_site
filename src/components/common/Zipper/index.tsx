@@ -16,9 +16,10 @@ export default function Zipper(): JSX.Element {
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop; // 스크롤 감지
 
-    if (scroll >= 2020) {
+    //2020 2477
+    if (scroll >= 1520) {
       setPosition("absolute");
-      setTop(2020);
+      setTop(1520);
     } else {
       setPosition("fixed");
       setTop(0);
@@ -26,7 +27,7 @@ export default function Zipper(): JSX.Element {
     // 애니메이션이 끝나면 -> fixed에서 absolute
 
     divs.forEach(() => {
-      setDivTransfrom(`scale(1.5, ${zipperScroll(scroll)})`); // 스크롤 시 div 세로 크기 조정
+      setDivTransfrom(`scale(1.05, ${zipperScroll(scroll)})`); // 스크롤 시 div 세로 크기 조정
     });
   });
   
@@ -59,7 +60,7 @@ export default function Zipper(): JSX.Element {
         zindex={1}
         size={200}
         position={position}
-        top={top === 0 ? "50%" : "2477px"}
+        top={top === 0 ? "50%" : "1977px"}
       >{`Lee\ndong hyeon`}</S.Title>
     </S.MainDiv>
   );
