@@ -11,8 +11,9 @@ const Activity = () => {
     ref.current.dataset.mouseDownAt = e.clientY;
   };
   const handleOnUp = () => {
-    // 마우스 위치 삭제
-    if (document.documentElement.scrollTop >= 10761 - 500) {
+    const scroll = document.documentElement.scrollTop;
+    if (scroll >= 10761 - 500 && 11057 >= scroll) {
+      // 마우스 위치 삭제
       ref.current.dataset.mouseDownAt = "0";
       ref.current.dataset.prevPercentage = ref.current.dataset.percentage;
     }
@@ -21,7 +22,8 @@ const Activity = () => {
     // 마우스를 드래그할 때만 함수 실행
     if (ref.current.dataset.mouseDownAt === "0") return;
 
-    if (document.documentElement.scrollTop >= 10761 - 500) {
+    const scroll = document.documentElement.scrollTop;
+    if (scroll >= 10761 - 500 && 11057 >= scroll) {
       // 디폴트 마우스 위치 - 현재 마우스 위치
       const mouseDelta = -(
         parseFloat(ref.current.dataset.mouseDownAt) - e.clientY
@@ -32,8 +34,6 @@ const Activity = () => {
       const per = parseFloat(ref.current.dataset.prevPercentage) + speed;
 
       const nextPercentage = per < 0 ? 0 : per > 215 ? 215 : per;
-
-      console.log(ref.current.dataset.prevPercentage);
 
       ref.current.dataset.percentage = nextPercentage;
 
@@ -62,12 +62,9 @@ const Activity = () => {
   document.addEventListener("mouseup", () => handleOnUp());
   document.addEventListener("mousemove", (e) => handleOnMove(e));
 
-  document.addEventListener("scroll", (e) => {
-    const scroll = document.documentElement.scrollTop;
-  });
-
   return (
     <>
+      <S.Shadow />
       <S.MainDiv>
         <S.Drag>
           <ArrowIcon />
