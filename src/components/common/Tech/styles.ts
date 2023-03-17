@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MainDiv = styled.div`
   width: 100vw;
-  height: 350vh;
+  height: 380vh;
   padding: 46px 75px;
   box-sizing: border-box;
   font-family: "Bebas Neue", cursive;
