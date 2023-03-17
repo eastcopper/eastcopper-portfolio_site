@@ -126,6 +126,7 @@ const Project = () => {
             <>
               {i !== a.length - 1 ? (
                 <div
+                  style={{ opacity: i === -rotate ? 1 : 0.5 }}
                   onClick={() => {
                     setRotate(-i);
                   }}
