@@ -250,8 +250,9 @@ export const Card = styled.div<{
       background-image: linear-gradient(
         to bottom,
         rgba(18, 18, 18, 1) 65%,
-        rgba(18, 18, 18, 0.9) 85%,
-        rgba(18, 18, 18, 0.7) 100%
+        rgba(18, 18, 18, 0.95) 75%,
+        rgba(18, 18, 18, 0.85) 85%,
+        rgba(18, 18, 18, 0.63) 100%
       );
       width: 100%;
       height: 100%;
@@ -322,6 +323,7 @@ export const CardContainer = styled.div<{
     transition: 0.5s;
     transition-delay: 0.25s;
     opacity: ${(props) => (props.opacity ? 1 : 0)};
+    transform-style: preserve-3d;
   }
   > div:nth-child(2) {
     position: absolute;
@@ -330,6 +332,7 @@ export const CardContainer = styled.div<{
     transform: rotateY(${(props) => (props.flip ? 0 : 37)}deg) scale(1, -1);
   }
 
+  transform-style: preserve-3d;
   perspective: 2000px;
   position: absolute;
   width: 800px;
