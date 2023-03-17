@@ -8,7 +8,6 @@ export const ScrollDiv = styled.div`
 export const MainDIv = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: var(--black);
   display: inline-flex;
   align-items: center;
   padding: 0 0px 0 98px;
@@ -17,6 +16,14 @@ export const MainDIv = styled.div`
   overflow: hidden;
   position: sticky;
   top: 0;
+`;
+
+export const Shadow = styled.div`
+  width: 100vw;
+  height: calc(300vh - 20px);
+  position: absolute;
+  box-shadow: inset 0 0 20px 20px #1e1f1e;
+  z-index: 99;
 `;
 
 export const CardContainer = styled.div<{ posY: number }>`

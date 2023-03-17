@@ -20,7 +20,7 @@ const GlobalStyle: any = createGlobalStyle`
     }
 
     :root {
-      --white: #f0f0f0;
+      --white: #e0e0e0;
       --black: #121212;
       --pink: #eb4970;
     }

@@ -18,6 +18,7 @@ const Introduce = () => {
 
   return (
     <S.ScrollDiv>
+      <S.Shadow />
       <S.MainDIv>
         <S.Keyword>
           My KeyWord <span>{">"}</span>

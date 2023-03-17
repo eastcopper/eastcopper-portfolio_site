@@ -83,7 +83,7 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
       right: 0;
       width: 335px;
       height: 70px;
-      background-color: var(--black);
+      background-color: #1e1f1e;
       animation: ${BrokenLine} 4s ease-in-out infinite;
     }
   }
@@ -249,10 +249,10 @@ export const Card = styled.div<{
       bottom: 0;
       background-image: linear-gradient(
         to bottom,
-        rgba(18, 18, 18, 1) 65%,
-        rgba(18, 18, 18, 0.95) 75%,
-        rgba(18, 18, 18, 0.85) 85%,
-        rgba(18, 18, 18, 0.63) 100%
+        rgba(30, 31, 30, 1) 65%,
+        rgba(30, 31, 30, 0.95) 75%,
+        rgba(30, 31, 30, 0.85) 85%,
+        rgba(30, 31, 30, 0.63) 100%
       );
       width: 100%;
       height: 100%;

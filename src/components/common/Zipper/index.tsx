@@ -56,7 +56,7 @@ export default function Zipper(): JSX.Element {
           /> // height를 동적으로 변화시켜 애니메이션 만들기
         ))}
         <S.Title
-          color="#f0f0f0"
+          color="#e0e0e0"
           zindex={1}
           size={200}
           position={position}
