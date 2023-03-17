@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const ScrollDiv = styled.div`
   width: 100vw;
@@ -52,13 +52,25 @@ export const Card = styled.div<{ image?: string }>`
   background-position: center;
   display: flex;
   align-items: flex-end;
-  padding: 10px 17px;
+  overflow: hidden;
 
-  span {
-    color: var(--white);
-    font-size: 30px;
+  > span {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    width: 100%;
+    height: 15%;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 0 0 20px 20px;
+    font-size: 28px;
     font-family: "Black Han Sans", sans-serif;
-    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5); */
+    box-shadow: 0 0 10px 10px var(--white);
+    span {
+      width: 50%;
+      white-space: pre-wrap;
+    }
   }
 `;
 
@@ -75,5 +87,27 @@ export const Title = styled.div`
     white-space: pre-wrap;
     font-size: 35px;
     font-family: "Do Hyeon", sans-serif;
+  }
+`;
+
+const KeyWordAnimation = keyframes`
+0% {
+transform: translateX(0%);
+}
+100% {
+  transform: translateX(-5%);
+}
+`;
+
+export const Keyword = styled.div`
+  position: absolute;
+  top: 100px;
+  left: 45%;
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  animation: ${KeyWordAnimation} 1s ease-in-out alternate infinite;
+  span {
+    color: var(--pink);
   }
 `;
