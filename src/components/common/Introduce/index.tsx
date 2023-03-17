@@ -19,6 +19,10 @@ const Introduce = () => {
   return (
     <S.ScrollDiv>
       <S.MainDIv>
+        <S.Keyword>
+          My KeyWord <span>{">"}</span>
+        </S.Keyword>
+
         <S.Title>
           <div>
             INTRODUCE<span>__</span>
@@ -31,14 +35,18 @@ const Introduce = () => {
           <div>
             {imageList.slice(0, 4).map((t) => (
               <S.Card image={t.url}>
-                <span>{t.content}</span>
+                <span>
+                  <span>{t.content}</span>
+                </span>
               </S.Card>
             ))}
           </div>
           <div>
             {imageList.slice(4, 8).map((t) => (
               <S.Card image={t.url}>
-                <span>{t.content}</span>
+                <span>
+                  <span>{t.content}</span>
+                </span>
               </S.Card>
             ))}
           </div>
