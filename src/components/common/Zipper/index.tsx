@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { zipperScroll } from "../../../lib/func/zipperAnimation";
+import ScrollIcon from "../Scroll";
 import * as S from "./style";
 
 export default function Zipper(): JSX.Element {
@@ -11,12 +12,10 @@ export default function Zipper(): JSX.Element {
   const [divTransfrom, setDivTransfrom] = useState<string>("scale(1.5, 0)");
   const [position, setPosition] = useState("fixed");
   const [top, setTop] = useState(0);
-  const [color, setColor] = useState("#121212");
 
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop; // 스크롤 감지
 
-    //2020 2477
     if (scroll >= 1520) {
       setPosition("absolute");
       setTop(1520);
@@ -30,38 +29,40 @@ export default function Zipper(): JSX.Element {
       setDivTransfrom(`scale(1.05, ${zipperScroll(scroll)})`); // 스크롤 시 div 세로 크기 조정
     });
   });
-  
 
   return (
-    <S.MainDiv position={position} backColor={color}>
-      <S.Title
-        color="#121212"
-        zindex={2}
-        size={160}
-        position={position}
-        top={"50%"}
-      >
-        PORTFOLIO
-      </S.Title>
-      {divs.map((item: number) => (
-        <span
-          style={{
-            transform: divTransfrom,
-            transition: `all ${item * 0.02}s linear`,
-            width: style,
-            height: "100%",
-            backgroundColor: "#121212",
-            display: "inline-flex",
-          }}
-        /> // height를 동적으로 변화시켜 애니메이션 만들기
-      ))}
-      <S.Title
-        color="#f0f0f0"
-        zindex={1}
-        size={200}
-        position={position}
-        top={top === 0 ? "50%" : "1977px"}
-      >{`Lee\ndong hyeon`}</S.Title>
-    </S.MainDiv>
+    <>
+      <ScrollIcon />
+      <S.MainDiv position={position} backColor={"#121212"}>
+        <S.Title
+          color="#121212"
+          zindex={2}
+          size={160}
+          position={position}
+          top={"50%"}
+        >
+          PORTFOLIO
+        </S.Title>
+        {divs.map((item: number) => (
+          <span
+            style={{
+              transform: divTransfrom,
+              transition: `all ${item * 0.02}s linear`,
+              width: style,
+              height: "100%",
+              backgroundColor: "#121212",
+              display: "inline-flex",
+            }}
+          /> // height를 동적으로 변화시켜 애니메이션 만들기
+        ))}
+        <S.Title
+          color="#f0f0f0"
+          zindex={1}
+          size={200}
+          position={position}
+          top={top === 0 ? "50%" : "1977px"}
+        >{`Lee\ndong hyeon`}</S.Title>
+      </S.MainDiv>
+    </>
   );
 }
