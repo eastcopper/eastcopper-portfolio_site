@@ -5,7 +5,7 @@ import Works from "./components/common/Works";
 import Introduce from "./components/common/Introduce";
 import Project from "./components/common/Project";
 import Tech from "./components/common/Tech";
-import Activity from "./components/common/Activity";
+import Activity from "./components/common/activity";
 import Footer from "./components/common/Footer";
 import styled from "styled-components";
 import backgroundImage from "./asset/img/background.png";
