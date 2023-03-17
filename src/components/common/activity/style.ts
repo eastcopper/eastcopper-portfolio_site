@@ -2,18 +2,19 @@ import styled, { keyframes } from "styled-components";
 
 export const MainDiv = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh + 100px);
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
   padding: 271px 390px;
+  box-shadow: 0 0 3px 3px #1e1f1e;
   > div:nth-last-child(1) {
     display: flex;
     gap: 4vmin;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(80%, -85%);
+    transform: translate(80%, -82%);
     user-select: none;
     flex-direction: column;
     img:nth-last-child(1) {
@@ -28,6 +29,14 @@ export const MainDiv = styled.div`
       border-radius: 20px;
     }
   }
+`;
+
+export const Shadow = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh + 100px);
+  box-shadow: inset 0 0 20px 20px #1e1f1e;
+  z-index: 99;
 `;
 
 export const Title = styled.div`
