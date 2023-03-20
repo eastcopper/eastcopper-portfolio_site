@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as S from "./style";
 import { imageList } from "../../../lib/export/data";
 
@@ -7,17 +7,25 @@ const Introduce = () => {
 
   window.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop;
+    const startPos: number = document.getElementById("introduce")
+      ?.offsetTop as number;
+    const sectionHeight: number = document.getElementById("introduce")
+      ?.clientHeight as number;
+
     // 섹션 시작
-    if (scroll >= 5780 + 1000) {
+    if (scroll >= startPos + sectionHeight + 1000) {
       setPosY(417);
-    } else if (scroll >= 3526 - 500) {
-      setPosY(parseInt(String((scroll - 3926) / 2.06)) - 480);
+    } else if (scroll >= startPos - 800) {
+      setPosY(parseInt(String((scroll - startPos) / 2.06)) - 480);
       // 섹션 최대 길이 - 섹션 시작 / 900(카드 콘테이너 길이) = 2.06
     }
   });
+  useEffect(() => {
+    console.log();
+  }, []);
 
   return (
-    <S.ScrollDiv>
+    <S.ScrollDiv id="introduce">
       <S.Shadow />
       <S.MainDIv>
         <S.Keyword>

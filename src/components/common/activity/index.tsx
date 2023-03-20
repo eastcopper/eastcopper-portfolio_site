@@ -1,18 +1,21 @@
 import * as S from "./style";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { ActivityContent, ActivityImageList } from "../../../lib/export/data";
 import ArrowIcon from "../../../asset/img/arrow";
 
 const Activity = () => {
   const ref: any = useRef(null);
 
-  const handleOnDown = (e: MouseEvent) => {
+  const handleOnDown = (e: any) => {
     // 마우스 디폴트위치 기억
-    ref.current.dataset.mouseDownAt = e.clientY;
+    if (e.target.id !== "footer") ref.current.dataset.mouseDownAt = e.clientY;
   };
   const handleOnUp = () => {
+    if (ref.current.dataset.mouseDownAt === "0") return;
     const scroll = document.documentElement.scrollTop;
-    if (scroll >= 10761 - 500 && 11057 >= scroll) {
+    const startPos = document.getElementById("activity")?.offsetTop as number;
+
+    if (scroll >= startPos - 1000) {
       // 마우스 위치 삭제
       ref.current.dataset.mouseDownAt = "0";
       ref.current.dataset.prevPercentage = ref.current.dataset.percentage;
@@ -21,9 +24,10 @@ const Activity = () => {
   const handleOnMove = (e: any) => {
     // 마우스를 드래그할 때만 함수 실행
     if (ref.current.dataset.mouseDownAt === "0") return;
-
     const scroll = document.documentElement.scrollTop;
-    if (scroll >= 10761 - 500 && 11057 >= scroll) {
+    const startPos = document.getElementById("activity")?.offsetTop as number;
+
+    if (scroll >= startPos - 1000) {
       // 디폴트 마우스 위치 - 현재 마우스 위치
       const mouseDelta = -(
         parseFloat(ref.current.dataset.mouseDownAt) - e.clientY
@@ -57,7 +61,6 @@ const Activity = () => {
       );
     }
   };
-
   document.addEventListener("mousedown", (e) => handleOnDown(e));
   document.addEventListener("mouseup", () => handleOnUp());
   document.addEventListener("mousemove", (e) => handleOnMove(e));
@@ -65,7 +68,7 @@ const Activity = () => {
   return (
     <>
       <S.Shadow />
-      <S.MainDiv>
+      <S.MainDiv id="activity">
         <S.Drag>
           <ArrowIcon />
           Drag

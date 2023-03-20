@@ -1,12 +1,9 @@
 import * as S from "./style";
 
 const Footer = () => {
-    
   return (
     <>
-      <S.MainDiv>
-        
-      </S.MainDiv>
+      <S.MainDiv id="footer"></S.MainDiv>
     </>
   );
 };

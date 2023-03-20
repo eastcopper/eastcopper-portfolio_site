@@ -11,10 +11,10 @@ import styled from "styled-components";
 import backgroundImage from "./asset/img/background.png";
 
 function App() {
+  console.log(document.documentElement.offsetHeight);
   return (
     <>
       <GlobalStyle />
-      <Layout />
       <Zipper />
       <Works />
       <Introduce />
@@ -36,7 +36,7 @@ const Layout = styled.div`
   left: 0;
 
   background-image: url(${backgroundImage});
-  /* mix-blend-mode: multiply; */
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
+  /* mix-blend-mode: overlay; */
   opacity: 0.7;
 `;

@@ -10,12 +10,14 @@ const Project = () => {
 
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop;
+    const startPos: number = document.getElementById("project")
+      ?.offsetTop as number;
 
-    // 섹션 시작 = 6195
-    if (scroll <= 6195 - 300) {
+    // 섹션 시작 = startPos
+    if (scroll <= startPos - 400) {
       setRotate(2);
       setGuide("hidden");
-    } else if (scroll <= 6195) {
+    } else if (scroll <= startPos) {
       setRotate(0);
       setGuide("show");
     }
@@ -25,7 +27,7 @@ const Project = () => {
 
   return (
     <>
-      <S.MainDIv>
+      <S.MainDIv id="project">
         {/* 가이드 선  */}
         <S.Drag guideLine={guide}>
           <div>

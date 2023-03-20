@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MainDiv = styled.div`
   width: 100vw;
-  height: 380vh;
+  height: 360vh;
   padding: 46px 75px;
   box-sizing: border-box;
   font-family: "Bebas Neue", cursive;
@@ -24,7 +24,7 @@ export const MainDiv = styled.div`
     font-weight: 400;
     font-size: 110px;
     margin: 0;
-    margin-bottom: 90px;
+    margin-bottom: 13vh;
     top: 20px;
     /* position: sticky; */
   }

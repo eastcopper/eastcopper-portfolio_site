@@ -10,7 +10,7 @@ const GlobalStyle: any = createGlobalStyle`
       overflow-x: hidden;
     }
     body::-webkit-scrollbar {
-      /* display: none;   */
+      display: none;  
     }
 
     * {

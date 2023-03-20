@@ -6,14 +6,17 @@ const Tech = () => {
 
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop;
-    // 섹션 시작 위치 7654
-    // 섹션 끝 위치 9528
-    // 1874 / 3 = 624
+    const startPos: number = document.getElementById("tech")
+      ?.offsetTop as number;
+    const sectionHeight: number = document.getElementById("tech")
+      ?.offsetHeight as number;
+
+    // (startPos - sectionHeight) / 3 = 624
     // 624 / 1416 = 0.4406779661016949
-    if (scroll >= 9528) {
+    if (scroll >= startPos + sectionHeight - 1700) {
       setPos(4248);
-    } else if (scroll >= 7654) {
-      setPos((scroll - 7654) / 0.4406779661016949);
+    } else if (scroll >= startPos) {
+      setPos((scroll - startPos) / 0.4406779661016949);
     } else {
       setPos(0);
     }
@@ -21,7 +24,7 @@ const Tech = () => {
 
   return (
     <>
-      <S.MainDiv>
+      <S.MainDiv id="tech">
         <span>
           <h1>Tech • Stack</h1>
           <span>

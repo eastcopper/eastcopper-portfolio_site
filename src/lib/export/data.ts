@@ -138,5 +138,5 @@ export const ActivityImageList = [activity3, , activity2, , activity1];
 export const ActivityContent = [
   "KOSA-MIDAS YOUNG TALENT CHALLENGE\n  2등 마이다스인 대표이사상 수상",
   "소프트웨이브 부스 운영",
-  "22회 앱잼 해커톤 대회\n  우수상 수상",
+  "22회 앱잼 해커톤 대회\n  우수상(2등) 수상",
 ];

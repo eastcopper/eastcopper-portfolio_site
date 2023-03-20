@@ -22,7 +22,7 @@ export const Shadow = styled.div`
   width: 100vw;
   height: calc(300vh - 20px);
   position: absolute;
-  box-shadow: inset 0 0 20px 20px #1e1f1e;
+  box-shadow: inset 0 0 20px 20px #121212;
   z-index: 99;
 `;
 
