@@ -21,7 +21,7 @@ export const Title = styled.p<{
   zindex: number;
   size: number;
 }>`
-  font-size: ${(props) => props.size}px;
+  font-size: ${(props) => props.size}vmax;
   z-index: ${(props) => props.zindex};
   position: ${(props) => props.position || "fixed"};
   left: 50%;
@@ -33,4 +33,5 @@ export const Title = styled.p<{
   font-family: "Bebas Neue", cursive;
   color: ${(props) => props.color};
   white-space: pre-wrap;
+  width: 100vw;
 `;

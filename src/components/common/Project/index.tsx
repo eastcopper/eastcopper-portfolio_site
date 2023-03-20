@@ -42,14 +42,14 @@ const Project = () => {
           {projects.map((t, i, a) => (
             <S.CardContainer
               scale={1 - (i + rotate) * 0.2}
-              transform={i + rotate < 0 ? 2000 : (i + rotate) * 300}
+              transform={i + rotate < 0 ? 104.1 : (i + rotate) * 15.6}
               zIndex={a.length - i}
               flip={i + rotate <= 0}
               opacity={i + rotate < 4}
             >
               <S.Card
                 scale={1}
-                translateX={current * 800}
+                translateX={current * 41.6}
                 move={i + rotate === 0}
               >
                 {i + rotate === 0 && t.imageList.length > 1 ? (
@@ -107,7 +107,7 @@ const Project = () => {
               </S.Card>
               <S.Card
                 scale={-1}
-                translateX={current * 800}
+                translateX={current * 41.6}
                 move={i + rotate === 0}
               >
                 {/* 아래 비친 모습 */}

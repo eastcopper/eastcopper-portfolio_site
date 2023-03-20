@@ -3,8 +3,8 @@ import * as S from "./style";
 const Works = () => {
   return (
     <>
-      <S.MainDiv>
-        <S.DesignHr rotate={90} translateX={44} top={"0%"} width={400}/>
+      <S.MainDiv id="work">
+        <S.DesignHr rotate={90} translateX={44} top={"0%"} width={400} />
         {/* <S.DesignHr rotate={0} translateX={120} top={"90%"} width={900}/> */}
         <S.RotateDiv>Works</S.RotateDiv>
         <div>

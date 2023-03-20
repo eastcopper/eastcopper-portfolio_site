@@ -13,10 +13,10 @@ const Tech = () => {
 
     // (startPos - sectionHeight) / 3 = 624
     // 624 / 1416 = 0.4406779661016949
-    if (scroll >= startPos + sectionHeight - 1700) {
-      setPos(4248);
+    if (scroll >= startPos + sectionHeight - 0) {
+      setPos(221.25);
     } else if (scroll >= startPos) {
-      setPos((scroll - startPos) / 0.4406779661016949);
+      setPos((scroll - startPos) / 0.4406779661016949 / 19.2);
     } else {
       setPos(0);
     }
@@ -31,9 +31,9 @@ const Tech = () => {
             <S.TextBox
               flex={"end"}
               top={27}
-              transX={pos <= 1416 ? 1416 - pos : 0}
-              opacity={!(pos <= 1416)}
-              pos={pos >= 4248}
+              transX={pos <= 73.75 ? 73.75 - pos : 0}
+              opacity={!(pos <= 73.75)}
+              pos={pos >= 221.25}
             >
               <div>
                 <div>t</div>
@@ -44,11 +44,11 @@ const Tech = () => {
               </div>
             </S.TextBox>
             <S.TextBox
-              pos={pos >= 4248}
+              pos={pos >= 221.25}
               flex={"start"}
               top={45}
-              transX={pos <= 1416 ? 1416 : 2832 - pos}
-              opacity={!(pos <= 2832)}
+              transX={pos <= 73.75 ? 73.75 : 147.5 - pos}
+              opacity={!(pos <= 147.5)}
             >
               <div>
                 <span>
@@ -59,11 +59,13 @@ const Tech = () => {
               </div>
             </S.TextBox>
             <S.TextBox
-              pos={pos >= 4248}
+              pos={pos >= 221.25}
               flex={"end"}
               top={63}
-              transX={pos <= 2832 ? 1416 : 4248 - pos}
-              opacity={!(pos <= 4248)}
+              transX={
+                pos <= 147.5 ? 73.75 : pos >= 221.25 ? 0 : 221.25 - pos
+              }
+              opacity={!(pos <= 221.25)}
             >
               <div>
                 <div>t</div>

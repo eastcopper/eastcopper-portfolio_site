@@ -20,9 +20,6 @@ const Introduce = () => {
       // 섹션 최대 길이 - 섹션 시작 / 900(카드 콘테이너 길이) = 2.06
     }
   });
-  useEffect(() => {
-    console.log();
-  }, []);
 
   return (
     <S.ScrollDiv id="introduce">

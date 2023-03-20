@@ -28,7 +28,7 @@ export const Shadow = styled.div`
 
 export const CardContainer = styled.div<{ posY: number }>`
   display: flex;
-  margin-right: 200px;
+  margin-right: 10.4vw;
   gap: 35px;
   transform: translateY(${(props) => props.posY}px);
   transition: 0.05s;
@@ -51,8 +51,8 @@ export const CardContainer = styled.div<{ posY: number }>`
 `;
 
 export const Card = styled.div<{ image?: string }>`
-  width: 285px;
-  height: 494px;
+  width: 14.8vw;
+  height: 25.7vw;
   border-radius: 20px;
   background-image: url(${(props) => props.image});
   background-size: cover;
@@ -70,7 +70,7 @@ export const Card = styled.div<{ image?: string }>`
     background-color: var(--white);
     color: var(--black);
     border-radius: 0 0 20px 20px;
-    font-size: 28px;
+    font-size: 1.4vw;
     font-family: "Black Han Sans", sans-serif;
     /* text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5); */
     box-shadow: 0 0 10px 10px var(--white);
@@ -84,7 +84,7 @@ export const Card = styled.div<{ image?: string }>`
 export const Title = styled.div`
   div:nth-child(1) {
     font-family: "Bebas Neue", cursive;
-    font-size: 150px;
+    font-size: 7.8vw;
     color: var(--white);
     span {
       color: var(--pink);
@@ -92,7 +92,7 @@ export const Title = styled.div`
   }
   div:nth-child(2) {
     white-space: pre-wrap;
-    font-size: 35px;
+    font-size: 1.8vw;
     font-family: "Do Hyeon", sans-serif;
   }
 `;
@@ -112,7 +112,7 @@ export const Keyword = styled.div`
   left: 45%;
   font-family: "Black Han Sans", sans-serif;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 1.1vw;
   animation: ${KeyWordAnimation} 1s ease-in-out alternate infinite;
   span {
     color: var(--pink);

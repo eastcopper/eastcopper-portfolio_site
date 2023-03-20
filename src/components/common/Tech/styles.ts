@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const MainDiv = styled.div`
   width: 100vw;
-  height: 360vh;
+  height: 205.25vmax;
   padding: 46px 75px;
   box-sizing: border-box;
   font-family: "Bebas Neue", cursive;
   color: var(--white);
 
   > span {
-    width: 100vw;
+    width: 100vmax;
     height: 100vh;
     position: sticky;
     top: 46px;
@@ -22,7 +22,7 @@ export const MainDiv = styled.div`
 
   h1 {
     font-weight: 400;
-    font-size: 110px;
+    font-size: 5.7vmax;
     margin: 0;
     margin-bottom: 13vh;
     top: 20px;
@@ -40,7 +40,7 @@ export const TextBox = styled.h2<{
   margin: 0;
   font-weight: 400;
   opacity: ${(props) => (props.opacity ? 0.5 : 1)};
-  font-size: 130px;
+  font-size: 6.77vmax;
   display: flex;
   transition: 0.05s;
   justify-content: ${(props) =>
@@ -48,7 +48,7 @@ export const TextBox = styled.h2<{
 
   transform: translateX(
     ${(props) =>
-      props.flex === "start" ? `-${props.transX}px` : `${props.transX}px`}
+      props.flex === "start" ? `-${props.transX}vmax` : `${props.transX}vmax`}
   );
 
   > div {
@@ -60,7 +60,7 @@ export const TextBox = styled.h2<{
           ${(props) => (props.pos ? 0 : props.flex === "start" ? 90 : -90)}deg
         )
         translateX(
-          ${(props) => (!props.pos ? 0 : props.flex === "start" ? -30 : 30)}px
+          ${(props) => (!props.pos ? 0 : props.flex === "start" ? -1.5 : 1.5)}vmax
         );
       color: var(--pink);
       transition: 0.5s;

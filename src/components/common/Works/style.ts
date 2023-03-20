@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RotateDiv = styled.div`
   position: absolute;
-  font-size: 200px;
+  font-size: 10.4vmax;
   font-family: "Bebas Neue", cursive;
   transform: rotateZ(270deg);
   color: var(--pink);
@@ -15,7 +15,7 @@ export const MainDiv = styled.div`
   height: 105vh;
   margin-top: calc(2020px + 50vh);
   box-sizing: border-box;
-  padding-top: 235px;
+  padding-top: 12.2vmax;
   color: var(--white);
   position: relative;
 
@@ -26,9 +26,9 @@ export const MainDiv = styled.div`
 
     > div {
       position: absolute;
-      bottom: -110px;
-      left: -440px;
-      font-size: 70px;
+      bottom: -5.7vmax;
+      left: -19.9vmax;
+      font-size: 3vmax;
       font-family: "Black Han Sans", sans-serif;
       font-weight: 400;
       white-space: pre-wrap;
@@ -37,8 +37,7 @@ export const MainDiv = styled.div`
 
   video {
     filter: grayscale(1);
-    width: 940px;
-    height: 521px;
+    width: 48.9vmax;
   }
 `;
 

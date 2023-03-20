@@ -9,19 +9,19 @@ const HandAnimation = keyframes`
     opacity: 1;
   }
   60% {
-    transform: translateX(315px);
+    transform: translateX(16.4vmax);
     opacity: 1;
   }
   80%,
   100% {
     opacity: 0;
-    transform: translateX(315px);
+    transform: translateX(16.4vmax);
   }
 `;
 
 const BrokenLine = keyframes`
   0% {
-    width: 325px;
+    width: 16.9vmax;
   }
   60% {
     width: 0px;
@@ -32,11 +32,11 @@ const BrokenLine = keyframes`
     opacity: 0;
   }
   62% {
-    width: 325px;
+    width: 16.9vmax;
     opacity: 0;
   }
   80%,100% {
-    width: 325px;
+    width: 16.9vmax;
     opacity: 1;
   } 
 `;
@@ -55,19 +55,18 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
   transition: 1s;
   color: var(--pink);
   position: absolute;
-  top: 80px;
-  left: 25%;
-  font-size: 50px;
-  width: 335px;
+  top: 4vmax;
+  left: 24vmax;
+  font-size: 2.6vmax;
+  width: 17.4vmax;
   font-family: "Quicksand", sans-serif;
 
   > span {
     position: absolute;
-    top: 65px;
     color: var(--white);
     left: 20%;
     width: 100%;
-    font-size: 24px;
+    font-size: 1.25vmax;
     font-family: "Do Hyeon", sans-serif;
     opacity: 0.8;
     animation: ${FadeIn} 1s ease-in-out alternate-reverse infinite;
@@ -75,13 +74,13 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
   }
 
   > div {
-    width: 335px;
+    width: 17.4vmax;
     display: flex;
     > div {
       position: absolute;
       top: 0;
       right: 0;
-      width: 335px;
+      width: 17.4vmax;
       height: 70px;
       background-color: var(--black);
       animation: ${BrokenLine} 4s ease-in-out infinite;
@@ -89,8 +88,8 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
   }
 
   img {
-    width: 70px;
-    height: 70px;
+    width: 3.6vmax;
+    height: 3.6vmax;
     object-fit: contain;
     z-index: 2;
 
@@ -100,13 +99,13 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
 
 export const Select = styled.div`
   position: absolute;
-  bottom: 80px;
-  width: 800px;
+  bottom: 4.1vmax;
+  width: 41.6vmax;
   z-index: 11;
   display: inline-flex;
   justify-content: space-around;
   padding: 0px 100px;
-  font-size: 70px;
+  font-size: 4vmax;
   color: var(--white);
   div {
     opacity: 0.5;
@@ -122,7 +121,7 @@ export const MainDIv = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  padding: 202px 0px 256px 256px;
+  padding: 10.5vmax 0px 13.3vmax 13.3vmax;
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
@@ -130,18 +129,18 @@ export const MainDIv = styled.div`
   overflow: hidden;
   > div:nth-child(1),
   > div:nth-child(2) {
-    width: 800px;
-    height: 502px;
+    width: 41.6vmax;
+    height: 26.1vmax;
     display: flex;
   }
 `;
 
 export const Content = styled.span`
-  width: 801px;
+  width: 41.7vmax;
   color: var(--white);
   font-family: "Do Hyeon", sans-serif;
   font-weight: 400;
-  height: 560px;
+  height: 29.1vmax;
   display: flex;
   margin-top: 30px;
   flex-direction: column;
@@ -154,44 +153,44 @@ export const Content = styled.span`
 
   h1 {
     margin: 0;
-    font-size: 100px;
+    font-size: 5.2vmax;
     font-family: "Bebas Neue", cursive;
   }
   h2 {
     margin: 0;
-    font-size: 40px;
+    font-size: 2vmax;
     font-weight: 400;
-    margin-bottom: 15px;
+    margin-bottom: 0.7vmax;
     span {
-      font-size: 24px;
+      font-size: 1.2vmax;
     }
   }
   span > div {
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 1.1vmax;
+    margin-bottom: 0.02vmax;
   }
 
   > span > div {
-    margin-bottom: 30px;
+    margin-bottom: 1.5vmax;
   }
   > div {
     display: flex;
-    gap: 30px;
+    gap: 1.5vmax;
     a {
       margin-top: 5px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: "Black Han Sans", sans-serif;
-      width: 200px;
-      height: 60px;
+      width: 10.4vmax;
+      height: 3.1vmax;
       background-color: var(--white);
       transition: 1s;
       border: none;
       border-radius: 10px;
       color: var(--black);
       text-align: center;
-      font-size: 24px;
+      font-size: 1.2vmax;
       cursor: pointer;
       position: relative;
       z-index: 1;
@@ -225,8 +224,8 @@ export const Card = styled.div<{
   translateX: number;
   move: boolean;
 }>`
-  width: 800px;
-  height: 552px;
+  width: 41.6vmax;
+  height: 28.75vmax;
   overflow: hidden;
   display: inline-flex;
   white-space: nowrap;
@@ -235,12 +234,14 @@ export const Card = styled.div<{
 
   > div {
     transition: 1s;
-    transform: translateX(-${(props) => (props.move ? props.translateX : 0)}px);
+    transform: translateX(
+      -${(props) => (props.move ? props.translateX : 0)}vmax
+    );
   }
 
   img {
-    width: 800px;
-    height: 552px;
+    width: 41.6vmax;
+    height: 28.75vmax;
     object-fit: cover;
     border-radius: 20px;
 
@@ -273,8 +274,8 @@ export const Arrow = styled.span<{ scale: number }>`
   position: absolute;
   top: 50%;
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 3.1vmax;
+  height: 3.1vmax;
   left: ${(props) => (props.scale === 1 ? 3 : 90)}%;
   background-color: var(--black);
   display: flex;
@@ -301,7 +302,7 @@ export const Arrow = styled.span<{ scale: number }>`
     font-family: "Corben", cursive;
     transition: all 0.2s ease;
     color: var(--white);
-    font-size: 25px;
+    font-size: 1.3vmax;
     margin-bottom: 5px;
   }
 `;
@@ -333,11 +334,11 @@ export const CardContainer = styled.div<{
   }
 
   transform-style: preserve-3d;
-  perspective: 2000px;
+  perspective: 104.1vmax;
   position: absolute;
-  width: 800px;
-  height: 552px;
+  width: 41.6vmax;
+  height: 28.75vmax;
   z-index: ${(props) => props.zIndex};
   transform: scale(${(props) => `${props.scale},${props.scale}`})
-    translateX(-${(props) => props.transform}px);
+    translateX(-${(props) => props.transform}vmax);
 `;

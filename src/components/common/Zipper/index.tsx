@@ -12,6 +12,8 @@ export default function Zipper(): JSX.Element {
   const [divTransfrom, setDivTransfrom] = useState<string>("scale(1.5, 0)");
   const [position, setPosition] = useState("fixed");
   const [top, setTop] = useState(0);
+  const d = document.documentElement.clientHeight;
+  console.log(d);
 
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop; // 스크롤 감지
@@ -33,11 +35,11 @@ export default function Zipper(): JSX.Element {
   return (
     <>
       <ScrollIcon />
-      <S.MainDiv position={position} backColor={"#121212"}>
+      <S.MainDiv position={position} backColor={"#121212"} id="zipper">
         <S.Title
           color="#121212"
           zindex={2}
-          size={160}
+          size={8.3}
           position={position}
           top={"50%"}
         >
@@ -58,9 +60,9 @@ export default function Zipper(): JSX.Element {
         <S.Title
           color="#e0e0e0"
           zindex={1}
-          size={200}
+          size={10.4}
           position={position}
-          top={top === 0 ? "50%" : "1977px"}
+          top={top === 0 ? "50%" : `${1520 + d / 2}px`}
         >{`Lee\ndong hyeon`}</S.Title>
       </S.MainDiv>
     </>
