@@ -131,6 +131,7 @@ const Project = () => {
                   style={{ opacity: i === -rotate ? 1 : 0.5 }}
                   onClick={() => {
                     setRotate(-i);
+                    setCurrent(0)
                   }}
                 >
                   •
