@@ -96,11 +96,11 @@ const Project = () => {
                   onDragEnd={(e) => {
                     setCurrent(0);
                     if (e.clientX > defaultValue) {
+                      setRotate(rotate + 1 > 0 ? rotate : rotate + 1);
+                    } else {
                       setRotate(
                         rotate - 1 > -projects.length ? rotate - 1 : rotate
                       );
-                    } else {
-                      setRotate(rotate + 1 > 0 ? rotate : rotate + 1);
                     }
                   }}
                 />
@@ -131,7 +131,7 @@ const Project = () => {
                   style={{ opacity: i === -rotate ? 1 : 0.5 }}
                   onClick={() => {
                     setRotate(-i);
-                    setCurrent(0)
+                    setCurrent(0);
                   }}
                 >
                   •
