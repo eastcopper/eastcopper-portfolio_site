@@ -70,6 +70,7 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
     font-family: "Do Hyeon", sans-serif;
     opacity: 0.8;
     animation: ${FadeIn} 1s ease-in-out alternate-reverse infinite;
+    
     animation-delay: 0.3s;
   }
 
@@ -340,5 +341,5 @@ export const CardContainer = styled.div<{
   height: 28.75vmax;
   z-index: ${(props) => props.zIndex};
   transform: scale(${(props) => `${props.scale},${props.scale}`})
-    translateX(-${(props) => props.transform}vmax);
+    translateX(${(props) => props.transform}vmax);
 `;

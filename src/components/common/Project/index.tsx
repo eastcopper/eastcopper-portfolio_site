@@ -42,7 +42,7 @@ const Project = () => {
           {projects.map((t, i, a) => (
             <S.CardContainer
               scale={1 - (i + rotate) * 0.2}
-              transform={i + rotate < 0 ? 104.1 : (i + rotate) * 15.6}
+              transform={i + rotate < 0 ? 104.1 : -(i + rotate) * 15.6}
               zIndex={a.length - i}
               flip={i + rotate <= 0}
               opacity={i + rotate < 4}
@@ -96,11 +96,11 @@ const Project = () => {
                   onDragEnd={(e) => {
                     setCurrent(0);
                     if (e.clientX > defaultValue) {
-                      setRotate(rotate + 1 > 0 ? rotate : rotate + 1);
-                    } else {
                       setRotate(
                         rotate - 1 > -projects.length ? rotate - 1 : rotate
                       );
+                    } else {
+                      setRotate(rotate + 1 > 0 ? rotate : rotate + 1);
                     }
                   }}
                 />
@@ -131,7 +131,7 @@ const Project = () => {
                   style={{ opacity: i === -rotate ? 1 : 0.5 }}
                   onClick={() => {
                     setRotate(-i);
-                    setCurrent(0);
+                    setCurrent(0)
                   }}
                 >
                   •
