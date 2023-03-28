@@ -2,12 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle: any = createGlobalStyle`
     body {
-      -webkit-user-select: none;
-      -moz-user-select: none; 
-      -ms-user-select: none;
-      user-select: none;
       background-color: #121212;
       overflow-x: hidden;
+      
     }
     body::-webkit-scrollbar {
       display: none;  
@@ -17,6 +14,10 @@ const GlobalStyle: any = createGlobalStyle`
       outline: none;
       text-decoration: none;
       box-sizing: border-box;
+      &::selection {
+        background-color: #eb4970;
+        color: #e0e0e0;
+      }
     }
 
     :root {
