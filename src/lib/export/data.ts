@@ -47,6 +47,19 @@ export const imageList = [
 
 export const projects = [
   {
+    imageList: [info1, info2, info3, info4, info5],
+    title: "Info",
+    subTitle: "교내 채용 관리 플랫폼",
+    content:
+      "Info는 현장실습생 채용 의뢰를 웹 어플리케이션으로 전환하여 담당자 선생님께서\n부재중이실 때도 원활한 채용 프로세스 진행을 가능하게 해주는 서비스입니다.",
+    githubLink: "https://github.com/info-dsm",
+    siteLink: "https://student.info-dsm.info",
+    develop:
+      "\n  • 회사 및 모집공고 조회 페이지 개발\n  • 온보딩 페이지 및 마이페이지 개발",
+    tech: "Next.js, TypeScript, Recoil, Cloudflare",
+    field: "FrontEnd",
+  },
+  {
     imageList: [simtong1, simtong2, simtong3],
     title: "심통",
     subTitle: "사네 인트라넷 서비스",
@@ -56,19 +69,6 @@ export const projects = [
     siteLink: "",
     develop: "\n  • 일정표 생성 및 삭제, 수정\n  • 휴무표 생성 및 삭제, 수정",
     tech: "Redux-Toolkit, TypeScript, Next.js",
-    field: "FrontEnd",
-  },
-  {
-    imageList: [info1, info2, info3, info4, info5],
-    title: "Info",
-    subTitle: "교내 채용 관리 플랫폼",
-    content:
-      "Info는 현장실습생 채용 의뢰를 웹 어플리케이션으로 전환하여 담당자 선생님께서\n부재중이실 때도 원활한 채용 프로세스 진행을 가능하게 해주는 서비스입니다.",
-    githubLink: "https://github.com/info-dsm",
-    siteLink: "https://info-dsm.info",
-    develop:
-      "\n  • 회사 및 모집공고 조회 페이지 개발\n  • 온보딩 페이지 및 마이페이지 개발",
-    tech: "Next.js, TypeScript, Recoil, Cloudflare",
     field: "FrontEnd",
   },
   {
