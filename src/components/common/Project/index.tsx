@@ -125,9 +125,13 @@ const Project = () => {
             </S.CardContainer>
           ))}
         </div>
-        <S.Help onClick={() => setHelp(true)}>
-          <img src={helpImg} alt="" />
-        </S.Help>
+        {guide === "show" ? (
+          <S.Help onClick={() => setHelp(true)}>
+            <img src={helpImg} alt="" />
+          </S.Help>
+        ) : (
+          <></>
+        )}
 
         {help ? (
           <>
