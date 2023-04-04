@@ -8,7 +8,7 @@ const Activity = () => {
 
   const handleOnDown = (e: any) => {
     // 마우스 디폴트위치 기억
-    if (e.target.id !== "footer") ref.current.dataset.mouseDownAt = e.clientY;
+    if (e.target.id === "activity") ref.current.dataset.mouseDownAt = e.clientY;
   };
   const handleOnUp = () => {
     if (ref.current.dataset.mouseDownAt === "0") return;
@@ -24,6 +24,7 @@ const Activity = () => {
   const handleOnMove = (e: any) => {
     // 마우스를 드래그할 때만 함수 실행
     if (ref.current.dataset.mouseDownAt === "0") return;
+    console.log(ref.current.dataset.mouseDownAt);
     const scroll = document.documentElement.scrollTop;
     const startPos = document.getElementById("activity")?.offsetTop as number;
 
@@ -67,8 +68,8 @@ const Activity = () => {
 
   return (
     <>
-      <S.Shadow />
-      <S.MainDiv id="activity">
+      <S.Shadow id="activity" />
+      <S.MainDiv>
         <S.Drag>
           <ArrowIcon />
           Drag
