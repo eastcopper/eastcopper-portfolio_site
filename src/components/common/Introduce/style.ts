@@ -19,11 +19,12 @@ export const MainDIv = styled.div`
 `;
 
 export const Shadow = styled.div`
-  width: 100vw;
+  /* width: 100vw;
   height: calc(300vh - 20px);
   position: absolute;
   box-shadow: inset 0 0 20px 20px #121212;
-  z-index: 99;
+  z-index: 99; */
+  /* background-color: red; */
 `;
 
 export const CardContainer = styled.div<{ posY: number }>`
@@ -42,38 +43,52 @@ export const CardContainer = styled.div<{ posY: number }>`
     transform: translateY(5%);
   }
   > div > div {
-    transition: transform 200ms;
+    /* transition: transform 200ms; */
 
-    &:hover {
+    /* &:hover {
       transform: scale3d(1.05, 1.05, 1.05);
-    }
+    } */
   }
 `;
 
 export const Card = styled.div<{ image?: string }>`
   width: 14.8vw;
   height: 25.7vw;
-  border-radius: 20px;
-  background-image: url(${(props) => props.image});
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+
+  > div {
+    width: 14.8vw;
+    height: 25.7vw;
+    background-image: url(${(props) => props.image});
+    background-size: cover;
+    background-position: center;
+    transition: 1s;
+    border-radius: 20px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 
   > span {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
     display: flex;
     align-items: center;
-    padding-left: 15px;
     width: 100%;
-    height: 15%;
-    background-color: var(--white);
+    /* background-color: var(--white); */
     color: var(--black);
     border-radius: 0 0 20px 20px;
     font-size: 1.4vw;
     font-family: "Black Han Sans", sans-serif;
     /* text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5); */
-    box-shadow: 0 0 10px 10px var(--white);
+    /* box-shadow: 0 0 10px 10px var(--white); */
+    color: #fff;
+    text-shadow: 0px 0px 10px #000;
     span {
       width: 50%;
       white-space: pre-wrap;

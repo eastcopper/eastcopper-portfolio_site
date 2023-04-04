@@ -41,6 +41,7 @@ const Introduce = () => {
           <div>
             {imageList.slice(0, 4).map((t) => (
               <S.Card image={t.url}>
+                <div />
                 <span>
                   <span>{t.content}</span>
                 </span>
@@ -50,6 +51,7 @@ const Introduce = () => {
           <div>
             {imageList.slice(4, 8).map((t) => (
               <S.Card image={t.url}>
+                <div />
                 <span>
                   <span>{t.content}</span>
                 </span>
