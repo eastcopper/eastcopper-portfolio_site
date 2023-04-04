@@ -50,6 +50,55 @@ const FadeIn = keyframes`
   }
 `;
 
+export const Modal = styled.div`
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px 30px var(--black) inset;
+
+  > div {
+    position: absolute;
+    top: 0;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    div {
+      z-index: 1;
+      cursor: pointer;
+      position: absolute;
+      font-size: 50px;
+      right: 30px;
+      top: 10px;
+      font-family: "Quicksand", sans-serif;
+    }
+  }
+
+  video {
+    border: 2px solid var(--white);
+    border-radius: 20px;
+    width: 70vw;
+    height: auto;
+  }
+`;
+
+export const Help = styled.div`
+  position: absolute;
+  left: 55.2vmax;
+  top: 16vmin;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
   opacity: ${(props) => (props.guideLine === "show" ? 1 : 0)};
   transition: 1s;
@@ -70,7 +119,7 @@ export const Drag = styled.span<{ guideLine: "show" | "hidden" }>`
     font-family: "Do Hyeon", sans-serif;
     opacity: 0.8;
     animation: ${FadeIn} 1s ease-in-out alternate-reverse infinite;
-    
+
     animation-delay: 0.3s;
   }
 

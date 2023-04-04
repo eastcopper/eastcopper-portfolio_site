@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import * as S from "./style";
 import { imageList, projects } from "../../../lib/export/data";
 import pointImg from "../../../asset/img/hand-pointer.png";
+import helpImg from "../../../asset/img/help.png";
 
 const Project = () => {
   const [current, setCurrent] = useState<number>(0);
   const [rotate, setRotate] = useState<number>(2);
   const [guide, setGuide] = useState<"show" | "hidden">("hidden");
+  const [help, setHelp] = useState<boolean>(false);
 
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop;
@@ -123,6 +125,29 @@ const Project = () => {
             </S.CardContainer>
           ))}
         </div>
+        <S.Help onClick={() => setHelp(true)}>
+          <img src={helpImg} alt="" />
+        </S.Help>
+
+        {help ? (
+          <>
+            <S.Modal
+              onClick={(e) => {
+                if (e.target instanceof Element && e.target.id !== "helpVideo")
+                  setHelp(false);
+              }}
+            >
+              <div>
+                <div onClick={() => setHelp(false)}>X</div>
+                <video muted loop autoPlay id="helpVideo">
+                  <source src="/video/help.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </S.Modal>
+          </>
+        ) : (
+          <></>
+        )}
         <S.Select>
           {imageList.map((_, i, a) => (
             <>
@@ -131,7 +156,7 @@ const Project = () => {
                   style={{ opacity: i === -rotate ? 1 : 0.5 }}
                   onClick={() => {
                     setRotate(-i);
-                    setCurrent(0)
+                    setCurrent(0);
                   }}
                 >
                   •
