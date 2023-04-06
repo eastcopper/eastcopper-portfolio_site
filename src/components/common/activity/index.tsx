@@ -24,7 +24,6 @@ const Activity = () => {
   const handleOnMove = (e: any) => {
     // 마우스를 드래그할 때만 함수 실행
     if (ref.current.dataset.mouseDownAt === "0") return;
-    console.log(ref.current.dataset.mouseDownAt);
     const scroll = document.documentElement.scrollTop;
     const startPos = document.getElementById("activity")?.offsetTop as number;
 
@@ -38,16 +37,17 @@ const Activity = () => {
       const speed = (mouseDelta / 500) * 100;
       const per = parseFloat(ref.current.dataset.prevPercentage) + speed;
 
-      const nextPercentage = per < 0 ? 0 : per > 215 ? 215 : per;
+      const nextPercentage = per < 0 ? 0 : per > 310 ? 310 : per;
 
       ref.current.dataset.percentage = nextPercentage;
 
       Array.from(ref.current.getElementsByClassName("image")).map(
         (t: any, i: number, a) => {
+          console.log(nextPercentage);
           const condition =
             a.findIndex((e) => e === t) === i &&
-            nextPercentage < 275 - i * 110 &&
-            nextPercentage > 165 - i * 110;
+            nextPercentage < 385 - i * 110 &&
+            nextPercentage > 275 - i * 110;
 
           const scale = condition ? 1 : 0.8;
           const translate = condition ? 0 : 50;

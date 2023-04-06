@@ -32,6 +32,7 @@ import fighting3 from "../../asset/img/fighting3.png";
 import activity1 from "../../asset/img/activity1.png";
 import activity2 from "../../asset/img/activity2.png";
 import activity3 from "../../asset/img/activity3.png";
+import activity4 from "../../asset/img/activity4.jpg";
 
 export const imageList = [
   { url: image1, content: "Curiosity" },
@@ -134,9 +135,10 @@ export const projects = [
   },
 ];
 
-export const ActivityImageList = [activity3, , activity2, , activity1];
+export const ActivityImageList = [activity4, activity3, activity2, activity1];
 export const ActivityContent = [
   "KOSA-MIDAS YOUNG TALENT CHALLENGE\n  2등 마이다스인 대표이사상 수상",
   "소프트웨이브 부스 운영",
   "22회 앱잼 해커톤 대회\n  우수상(2등) 수상",
+  "대전지방기능경기대회 사이버보안\n  동상(3위)",
 ];

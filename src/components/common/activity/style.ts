@@ -13,7 +13,7 @@ export const MainDiv = styled.div`
     gap: 4vmin;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(80%, -82%);
     user-select: none;
     flex-direction: column;
