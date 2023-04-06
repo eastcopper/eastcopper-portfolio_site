@@ -12,6 +12,10 @@ export const MainDiv = styled.div<{
   height: 100%;
   background-color: var(--white);
   display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
 `;
 
 export const Title = styled.p<{
