@@ -9,6 +9,7 @@ const Project = () => {
   const [rotate, setRotate] = useState<number>(2);
   const [guide, setGuide] = useState<"show" | "hidden">("hidden");
   const [help, setHelp] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop;
@@ -143,7 +144,26 @@ const Project = () => {
             >
               <div>
                 <div onClick={() => setHelp(false)}>X</div>
-                <video muted loop autoPlay id="helpVideo">
+
+                {loading ? (
+                  <div>
+                    {Array.from({ length: 9 }).map((_, i) => (
+                      <S.Spot index={i}>
+                        <span>•</span>
+                      </S.Spot>
+                    ))}
+                  </div>
+                ) : (
+                  <></>
+                )}
+                <video
+                  muted
+                  loop
+                  autoPlay
+                  id="helpVideo"
+                  onLoadStart={() => setLoading(true)}
+                  onLoadedData={() => setLoading(false)}
+                >
                   <source src="/video/help.mp4" type="video/mp4" />
                 </video>
               </div>

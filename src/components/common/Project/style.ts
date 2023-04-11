@@ -50,6 +50,32 @@ const FadeIn = keyframes`
   }
 `;
 
+const SpotFade = keyframes`
+  0% {
+    opacity: 0.1;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(4);
+  }
+`;
+
+export const Spot = styled.div<{ index: number }>`
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  transform: rotateZ(${(props) => props.index * 40}deg);
+  display: flex;
+  align-items: center;
+
+  span {
+    opacity: 0;
+    animation: ${SpotFade} 1s linear infinite;
+    animation-delay: ${(props) => props.index * 0.111}s;
+  }
+`;
+
 export const Modal = styled.div`
   position: absolute;
   z-index: 99;
@@ -67,7 +93,7 @@ export const Modal = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    div {
+    > div:nth-child(1) {
       z-index: 1;
       cursor: pointer;
       position: absolute;
@@ -75,6 +101,13 @@ export const Modal = styled.div`
       right: 30px;
       top: 10px;
       font-family: "Quicksand", sans-serif;
+      + div {
+        position: absolute;
+        
+        top: 48%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 
