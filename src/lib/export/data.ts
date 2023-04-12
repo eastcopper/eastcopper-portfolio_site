@@ -130,7 +130,7 @@ export const projects = [
     develop: "\n  • 캐릭터 셀렉트 페이지\n  • 게임 페이지",
     tech: "React, TypeScript",
     githubLink: "https://github.com/eastcopper/fighting_game",
-    siteLink: "https://eastcopper-fighting-game.netlify.app",
+    siteLink: "https://fighting-game-eastcopper.vercel.app/",
     field: "Individual Project",
   },
 ];
