@@ -10,6 +10,7 @@ const Project = () => {
   const [guide, setGuide] = useState<"show" | "hidden">("hidden");
   const [help, setHelp] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
+  const [first, setFirst] = useState<boolean>(true);
 
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop;
@@ -17,12 +18,10 @@ const Project = () => {
       ?.offsetTop as number;
 
     // 섹션 시작 = startPos
-    if (scroll <= startPos - 400) {
-      setRotate(2);
-      setGuide("hidden");
-    } else if (scroll <= startPos) {
+    if (!(scroll <= startPos - 400) && scroll <= startPos && first) {
       setRotate(0);
       setGuide("show");
+      setFirst(false);
     }
   });
 
