@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const MainDiv = styled.div<{
   position?: string;
@@ -16,6 +16,15 @@ export const MainDiv = styled.div<{
   -moz-user-select: none;
   -ms-use-select: none;
   user-select: none;
+`;
+
+const FadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 `;
 
 export const Title = styled.p<{
@@ -38,4 +47,8 @@ export const Title = styled.p<{
   color: ${(props) => props.color};
   white-space: pre-wrap;
   width: 100vw;
+  animation: ${FadeIn} 1s ease;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 `;
