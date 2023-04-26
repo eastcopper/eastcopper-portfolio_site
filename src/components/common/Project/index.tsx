@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import * as S from "./style";
 import { imageList, projects } from "../../../lib/export/data";
 import pointImg from "../../../asset/img/hand-pointer.png";
@@ -10,7 +10,6 @@ const Project = () => {
   const [guide, setGuide] = useState<"show" | "hidden">("hidden");
   const [help, setHelp] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const [first, setFirst] = useState<boolean>(true);
 
   document.addEventListener("scroll", () => {
     const scroll: number = document.documentElement.scrollTop;
@@ -18,10 +17,9 @@ const Project = () => {
       ?.offsetTop as number;
 
     // 섹션 시작 = startPos
-    if (!(scroll <= startPos - 400) && scroll <= startPos && first) {
-      setRotate(0);
+    if (!(scroll <= startPos - 400) && scroll <= startPos) {
+      setRotate(rotate === 2 ? 0 : rotate);
       setGuide("show");
-      setFirst(false);
     }
   });
 
